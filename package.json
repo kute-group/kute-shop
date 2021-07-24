@@ -1,0 +1,24 @@
+{
+  "name": "kute-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "concurrently \"cd backend && npm install\" \"cd client && npm install\"",
+    "start": "concurrently \"cd backend && npm run start\" \"cd client && npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kute-group/kute-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kute-group/kute-shop/issues"
+  },
+  "homepage": "https://github.com/kute-group/kute-shop#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
