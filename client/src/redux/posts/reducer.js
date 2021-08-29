@@ -2,7 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import {
   getPosts,
-  getPost
+  getPost,
+  createPost,
+  editPost,
+  deletePost,
 } from './action'
 
 const postsSlice = createSlice({
@@ -45,6 +48,51 @@ const postsSlice = createSlice({
     },
 
     [getPosts.rejected]: (state, action) => {
+      state.list.loading = false;
+      state.list.error = action.error;
+      console.error('error', action.error);
+    },
+
+    [createPost.pending]: (state, action) => {
+      state.list.loading = true;
+    },
+
+    [createPost.fulfilled]: (state, action) => {
+      state.list.loading = false;
+      state.list.data = action.payload;
+    },
+
+    [createPost.rejected]: (state, action) => {
+      state.list.loading = false;
+      state.list.error = action.error;
+      console.error('error', action.error);
+    },
+
+    [editPost.pending]: (state, action) => {
+      state.list.loading = true;
+    },
+
+    [editPost.fulfilled]: (state, action) => {
+      state.list.loading = false;
+      state.list.data = action.payload;
+    },
+
+    [editPost.rejected]: (state, action) => {
+      state.list.loading = false;
+      state.list.error = action.error;
+      console.error('error', action.error);
+    },
+
+    [deletePost.pending]: (state, action) => {
+      state.list.loading = true;
+    },
+
+    [deletePost.fulfilled]: (state, action) => {
+      state.list.loading = false;
+      state.list.data = action.payload;
+    },
+
+    [deletePost.rejected]: (state, action) => {
       state.list.loading = false;
       state.list.error = action.error;
       console.error('error', action.error);

@@ -29,8 +29,6 @@ const props = {
   },
 };
 
-
-
 function FormProducts() {
   return (
     <WraperApp>

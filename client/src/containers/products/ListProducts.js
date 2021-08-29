@@ -53,7 +53,6 @@ const data = [
     categories: 'Nội thất',
     date: "18-03-2021"
   },
-
 ];
 function ListProducts() {
   return (

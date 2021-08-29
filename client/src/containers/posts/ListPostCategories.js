@@ -94,7 +94,7 @@ function ListPostCategories() {
             <h3>Trạng Thái</h3>
             <Dropdown overlay={menu2}>
               <Button>
-                Trạng Thái <DownOutlined />
+                Trạng Thái <DownOutlined /> 
               </Button>
             </Dropdown>
           </div>
