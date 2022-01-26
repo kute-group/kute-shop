@@ -1,27 +1,25 @@
 .clear {
   clear: both;
-  margin:40px;
+  margin: 40px;
 }
 
 .app-auth {
   background: url(https://web5days.com/static/media/bg-auth.824506ac.jpg);
   background-size: cover;
   height: 100vh;
-
 }
-.login-form{
+.login-form {
   background-color: #ffffff;
   border-radius: 5px;
   padding: 16px 21px 0px;
   font-weight: 400;
 }
 
-
-.app-auth .logo img{
+.app-auth .logo img {
   object-fit: cover;
   display: block;
   width: 160px;
-  height:160px;
+  height: 160px;
   margin: auto;
   padding: 15px;
 }
@@ -30,6 +28,21 @@
   background-color: cover;
 }
 
-.ant-col-24{
+.ant-col-24 {
   padding: 13px;
+}
+.ant-layout.ant-layout-has-sider {
+  height: 100vh;
+}
+.main-btn {
+  margin-bottom: 30px;
+}
+
+.create-product {
+  margin: 20px;
+}
+
+.product-button {
+  margin-top: 20px;
+  margin-left: 20px;
 }

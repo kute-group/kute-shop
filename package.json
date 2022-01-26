@@ -2,7 +2,7 @@
   "name": "kute-shop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "install-all": "concurrently \"cd backend && npm install\" \"cd client && npm install\"",
     "start": "concurrently \"cd backend && npm run start\" \"cd client && npm run start\"",

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import postReducer from 'redux/posts/reducer';
+import productsReducer from './products/reducer';
 
 export default configureStore({
   reducer: {
-    posts: postReducer,
+    products: productsReducer,
   },
 })

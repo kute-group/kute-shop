@@ -1,16 +1,9 @@
-import WraperApp from 'components/WraperApp';
 import { Menu, Dropdown, Button, Tooltip } from 'antd';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { Table, Tag, Space } from 'antd';
 import { Input } from 'antd';
 import { Row, Col } from 'antd';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import WraperApp from '../../components/WraperApp';
 const { Column } = Table;
 const { TextArea } = Input;
 const menu = (
@@ -51,7 +44,6 @@ const data = [
     status: "Đang hoạt động"
 
   }
-
 ]
 
 function ListProductsCategories() {
