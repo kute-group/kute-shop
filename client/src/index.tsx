@@ -10,6 +10,7 @@ import ListProductCategories from "./containers/products/ListProductCategories";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import EditProductForm from "./containers/products/EditProductForm";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +20,7 @@ ReactDOM.render(
           <Routes>
             <Route path="/" element={<ListProducts />} />
             <Route path="/product/add" element={<FormProduct />} />
-            <Route path="/product/:id" element={<FormProduct />} />
+            <Route path="/product/:id" element={<EditProductForm />} />
             <Route
               path="/product_categories"
               element={<ListProductCategories />}

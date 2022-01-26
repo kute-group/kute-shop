@@ -1,29 +1,30 @@
-import { Input, Modal, notification } from "antd";
-import { UnorderedListOutlined } from "@ant-design/icons";
+import { Input } from "antd";
 import { Upload, message, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import { Row, Col } from "antd";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
 import WraperApp from "../../components/WraperApp";
-import { useEffect, useState } from "react";
-import {
-  createProduct,
-  deleteProduct,
-  getProducts,
-} from "../../redux/products/action";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { createProduct } from "../../redux/products/action";
 import { useDispatch, useSelector } from "react-redux";
 import { get } from "lodash";
 const { TextArea } = Input;
 
 function FormProducts(props: any) {
-  
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [salePrice, setSalePrice] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
 
-  const handleOnPress = () => {
+  const handleOnPress = async () => {
+    const onSuccess = async () => {
+      await navigate("/");
+    };
+    const onError = async () => {
+      console.log("loi");
+    };
     dispatch(
       createProduct({
         data: {
@@ -34,22 +35,11 @@ function FormProducts(props: any) {
           status: status,
           createdAt: new Date(),
         },
+        onSuccess,
+        onError,
       })
     );
   };
-
-  const products = useSelector((state) => state);
-
-  const productsData = get(products, "products.list.data.data", []);
-  console.log("productsData", productsData);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
-  if (!productsData) {
-    return null;
-  }
 
   return (
     <WraperApp>
@@ -95,7 +85,7 @@ function FormProducts(props: any) {
           </div>
           <div className="product-button">
             <Button type="primary" onClick={() => handleOnPress()}>
-              Thêm sản phẩm
+              Add Product
             </Button>
           </div>
         </Col>

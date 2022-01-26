@@ -9,6 +9,11 @@ import {
 } from "./type";
 import { API_URL } from "../../config/config";
 
+export interface ActionParams {
+  data?: any;
+  onSuccess?: (param: any) => void;
+  onError?: (param: any) => void;
+}
 
 export const getProducts = createAsyncThunk(GET_PRODUCTS, async () => {
   const response = await axios.get(`${API_URL}/api/Products`);
@@ -17,15 +22,14 @@ export const getProducts = createAsyncThunk(GET_PRODUCTS, async () => {
 });
 
 export const getProduct = createAsyncThunk(GET_PRODUCT, async (params: any) => {
-  const response = await axios.get(`${API_URL}/api/Products/${params.id}`);
+  const response = await axios.get(`${API_URL}/api/Product/${params.id}`);
   return response.data;
 });
 
-
 export const createProduct = createAsyncThunk(
   ADD_PRODUCT,
-  async (params: any) => {
-    const response = await axios.post(`${API_URL}/api/Product`, params);
+  async (params: ActionParams) => {
+    const response = await axios.post(`${API_URL}/api/Product`, params.data);
     console.log("params", params);
 
     console.log(createProduct);
